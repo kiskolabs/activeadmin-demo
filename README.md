@@ -1,5 +1,7 @@
 # README
 
+Full abstract and more details: https://gist.github.com/amkisko/c704c1a6462d573dfa4820ae07d807a6
+
 ```bash
 $ rails new . -n ActiveAdminDemo -c tailwind -a propshaft --skip-test --skip-system-test
 
