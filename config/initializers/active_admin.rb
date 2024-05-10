@@ -1,3 +1,24 @@
+ActiveAdmin.importmap.draw do
+  pin "@rails/actioncable", to: "actioncable.esm.js", preload: true
+  pin "@rails/activestorage", to: "activestorage.esm.js", preload: true
+
+  pin "@hotwired/turbo-rails", to: "turbo.js", preload: true
+  pin "@hotwired/stimulus", to: "stimulus.js", preload: true
+  pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+
+  pin "application", preload: true
+  pin_all_from "app/javascript/lib", under: "lib"
+  pin_all_from "app/javascript/channels", under: "channels"
+  pin_all_from "app/javascript/controllers", under: "controllers"
+end
+
+ActiveSupport.on_load(:action_controller_base) do
+  ActiveAdmin.importmap.cache_sweeper(watches: [
+    Rails.root.join("app/javascript"),
+    Rails.root.join("app/assets/stylesheets")
+  ])
+end
+
 ActiveAdmin.setup do |config|
   # == Site Title
   #
