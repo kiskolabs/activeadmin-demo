@@ -28,6 +28,6 @@ end
 Rake::Task["assets:precompile"].enhance(["active_admin:build"])
 
 Rake::Task["test:prepare"].enhance(["active_admin:build"]) if Rake::Task.task_defined?("test:prepare")
-Rake::Task["spec:prepare"].enhance(["tailwindcss:build"]) if Rake::Task.task_defined?("spec:prepare")
-Rake::Task["db:test:prepare"].enhance(["tailwindcss:build"]) if Rake::Task.task_defined?("db:test:prepare")
+Rake::Task["spec:prepare"].enhance(["active_admin:build"]) if Rake::Task.task_defined?("spec:prepare")
+Rake::Task["db:test:prepare"].enhance(["active_admin:build"]) if Rake::Task.task_defined?("db:test:prepare")
 
