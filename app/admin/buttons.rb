@@ -1,6 +1,6 @@
 ActiveAdmin.register Button do
   # Specify parameters which should be permitted for assignment
-  permit_params :clicked, :clicked_at
+  permit_params :clicked, :clicked_at, :raise_validation_error
 
   # or consider:
   #
@@ -48,6 +48,7 @@ ActiveAdmin.register Button do
     f.inputs do
       f.input :clicked
       f.input :clicked_at
+      f.input :raise_validation_error, as: :boolean
     end
     f.actions
   end
